@@ -1,0 +1,15 @@
+name: Ubuntu_Server
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: '* * * * *'
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - run: source ubuntu-run.sh
